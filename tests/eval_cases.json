@@ -1,0 +1,88 @@
+[
+    {
+        "id": "single_01",
+        "category": "single_tool",
+        "input": "北京今天天气怎么样？",
+        "expected_tools": [
+            "get_weather"
+        ],
+        "expected_keywords": [
+            "温度",
+            "°C"
+        ],
+        "max_rounds": 3
+    },
+    {
+        "id": "single_02",
+        "category": "single_tool",
+        "input": "计算 1234 * 5678",
+        "expected_tools": [
+            "calculator_tool"
+        ],
+        "expected_keywords": [
+            "7006652"
+        ],
+        "max_rounds": 2
+    },
+    {
+        "id": "single_03",
+        "category": "single_tool",
+        "input": "搜索 LangChain 最新版本",
+        "expected_tools": [
+            "search_tool"
+        ],
+        "expected_keywords": [
+            "LangChain"
+        ],
+        "max_rounds": 3
+    },
+    {
+        "id": "multi_01",
+        "category": "multi_tool",
+        "input": "搜索 OpenAI 最新发布的模型，然后计算其参数量是 GPT-4 的多少倍",
+        "expected_tools": [
+            "search_tool",
+            "calculator_tool"
+        ],
+        "expected_keywords": [
+            "倍"
+        ],
+        "max_rounds": 6
+    },
+    {
+        "id": "multi_02",
+        "category": "multi_tool",
+        "input": "查一下上海今天的天气，然后计算如果明天温度升高5度是多少",
+        "expected_tools": [
+            "get_weather",
+            "calculator_tool"
+        ],
+        "expected_keywords": [
+            "°C",
+            "5"
+        ],
+        "max_rounds": 4
+    },
+    {
+        "id": "error_01",
+        "category": "error_recovery",
+        "input": "查一下不存在城市的天气",
+        "expected_tools": [
+            "get_weather"
+        ],
+        "expected_behavior": "graceful_error",
+        "expected_keywords": [],
+        "max_rounds": 4
+    },
+    {
+        "id": "error_02",
+        "category": "error_recovery",
+        "input": "计算 abc + def",
+        "expected_tools": [
+            "calculator_tool"
+        ],
+        "expected_behavior": "graceful_error",
+        "expected_keywords": [],
+        "max_rounds": 3
+    }
+]

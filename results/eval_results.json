@@ -1,0 +1,137 @@
+{
+  "single_01": {
+    "status": "pass",
+    "category": "single_tool",
+    "input": "北京今天天气怎么样？",
+    "output_preview": "\n\n北京今天的天气情况如下：\n\n- **温度**：31.8°C（体感约 31.8°C）\n- **天气**：基本晴朗\n- **风速**：7.8 km/h\n\n请注意防晒和补水，避免长时间暴露在阳光下。",
+    "keyword_score": 1.0,
+    "tool_match": true,
+    "used_tools": [
+      "get_weather"
+    ],
+    "expected_tools": [
+      "get_weather"
+    ],
+    "rounds": 1,
+    "elapsed_s": 17.94,
+    "judge_avg": 3.67,
+    "timestamp": "2026-09-23T14:47:32.317759"
+  },
+  "single_02": {
+    "status": "pass",
+    "category": "single_tool",
+    "input": "计算 1234 * 5678",
+    "output_preview": "\n\n1234 * 5678 的计算结果是 **7006652**。",
+    "keyword_score": 1.0,
+    "tool_match": true,
+    "used_tools": [
+      "calculator_tool"
+    ],
+    "expected_tools": [
+      "calculator_tool"
+    ],
+    "rounds": 1,
+    "elapsed_s": 8.06,
+    "judge_avg": 5.0,
+    "timestamp": "2026-09-23T14:47:42.348983"
+  },
+  "single_03": {
+    "status": "pass",
+    "category": "single_tool",
+    "input": "搜索 LangChain 最新版本",
+    "output_preview": "\n\n很抱歉，由于网络问题，我多次尝试搜索 LangChain 最新版本的信息都失败了，未能获取到相关数据。\n\n建议您通过以下官方渠道获取最新信息：\n- **LangChain 官方 GitHub 仓库**：https://github.com/langchain-ai/langchain\n- **LangChain 官方文档**：https://python.langchain.com/\n\n您可以",
+    "keyword_score": 1.0,
+    "tool_match": true,
+    "used_tools": [
+      "search_tool",
+      "search_tool",
+      "search_tool"
+    ],
+    "expected_tools": [
+      "search_tool"
+    ],
+    "rounds": 3,
+    "elapsed_s": 37.27,
+    "judge_avg": 3.67,
+    "timestamp": "2026-09-23T14:48:22.331577"
+  },
+  "multi_01": {
+    "status": "pass",
+    "category": "multi_tool",
+    "input": "搜索 OpenAI 最新发布的模型，然后计算其参数量是 GPT-4 的多少倍",
+    "output_preview": "\n\n根据已知信息，OpenAI 最新发布的模型是 GPT-4o，其参数量约为 1760 亿（176B），而 GPT-4 的参数量约为 1000 亿（100B）。\n\n计算 GPT-4o 参数量是 GPT-4 的多少倍：\n1760 / 1000 = 1.76 倍\n\n因此，GPT-4o 的参数量是 GPT-4 的 **1.76 倍**。",
+    "keyword_score": 1.0,
+    "tool_match": true,
+    "used_tools": [
+      "search_tool",
+      "search_tool",
+      "search_tool",
+      "calculator_tool"
+    ],
+    "expected_tools": [
+      "search_tool",
+      "calculator_tool"
+    ],
+    "rounds": 4,
+    "elapsed_s": 37.96,
+    "judge_avg": 1.67,
+    "timestamp": "2026-09-23T14:49:03.136468"
+  },
+  "multi_02": {
+    "status": "pass",
+    "category": "multi_tool",
+    "input": "查一下上海今天的天气，然后计算如果明天温度升高5度是多少",
+    "output_preview": "\n\n上海今天的天气是阴天，温度为29.6°C。如果明天温度升高5度，那么明天的温度将是34.6°C。",
+    "keyword_score": 1.0,
+    "tool_match": true,
+    "used_tools": [
+      "get_weather",
+      "calculator_tool"
+    ],
+    "expected_tools": [
+      "get_weather",
+      "calculator_tool"
+    ],
+    "rounds": 2,
+    "elapsed_s": 13.39,
+    "judge_avg": 4.67,
+    "timestamp": "2026-09-23T14:49:24.254614"
+  },
+  "error_01": {
+    "status": "pass",
+    "category": "error_recovery",
+    "input": "查一下不存在城市的天气",
+    "output_preview": "\n\n无法查询不存在的城市的天气。\n\n我尝试了以下操作：\n1. **搜索工具**：搜索\"不存在城市 天气查询\"时，因网络超时未能获取信息。\n2. **天气查询**：尝试查询\"火星城\"（一个不存在的城市），系统返回\"找不到城市 '火星城'，请检查城市名称是否正确。\"\n\n**结论**：天气查询系统需要真实存在且可识别的城市名称，无法查询虚构或不存在城市的天气。如果您想查询某个具体城市的天气，请提供正确的",
+    "keyword_score": 1.0,
+    "tool_match": true,
+    "used_tools": [
+      "search_tool",
+      "get_weather"
+    ],
+    "expected_tools": [
+      "get_weather"
+    ],
+    "rounds": 2,
+    "elapsed_s": 37.6,
+    "judge_avg": 0,
+    "timestamp": "2026-09-23T14:50:01.863091"
+  },
+  "error_02": {
+    "status": "pass",
+    "category": "error_recovery",
+    "input": "计算 abc + def",
+    "output_preview": "\n\n无法计算 \"abc + def\"，因为这不是一个有效的数学表达式。\"abc\" 和 \"def\" 不是数字，无法进行加法运算。\n\n如果您想计算具体的数值，请提供具体的数字，例如 \"123 + 456\" 或 \"a + b\"（其中 a 和 b 是已知的数值）。",
+    "keyword_score": 1.0,
+    "tool_match": true,
+    "used_tools": [
+      "calculator_tool"
+    ],
+    "expected_tools": [
+      "calculator_tool"
+    ],
+    "rounds": 1,
+    "elapsed_s": 18.65,
+    "judge_avg": 0,
+    "timestamp": "2026-09-23T14:50:20.523986"
+  }
+}
