@@ -19,6 +19,10 @@ Agent Eval Suite 是一套面向 AI Agent 的 **自动化质量评测体系**。
 
 系统实现了从 **测试用例定义 → 批量自动执行 → 多维度指标计算 → LLM 评审打分 → 可视化看板** 的完整评测管线，为 Agent 的迭代优化提供数据支撑。
 
+
+本项目测试基于 [Multi_tool_agent](https://github.com/Sylvia-moon0526/Multi_tool_agent.git) 进行开发，使用时请根据需要进行测试的Agent改变对应路径。
+
+
 ### 核心问题
 
 | 痛点 | 本系统的解决方案 |
